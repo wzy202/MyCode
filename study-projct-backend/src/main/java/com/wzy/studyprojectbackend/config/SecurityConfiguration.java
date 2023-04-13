@@ -1,7 +1,7 @@
-package com.wzy.studyprojctbackend.config;
+package com.wzy.studyprojectbackend.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wzy.studyprojctbackend.entity.RestBean;
+import com.wzy.studyprojectbackend.entity.RestBean;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,10 +11,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.AuthenticationEntryPointFailureHandler;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -23,6 +22,10 @@ import java.nio.charset.StandardCharsets;
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

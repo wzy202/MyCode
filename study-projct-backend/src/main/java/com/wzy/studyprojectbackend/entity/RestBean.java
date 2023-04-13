@@ -1,4 +1,4 @@
-package com.wzy.studyprojctbackend.entity;
+package com.wzy.studyprojectbackend.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
