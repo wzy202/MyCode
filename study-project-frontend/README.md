@@ -12,6 +12,13 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+### 安装依赖
+```shell
+npm install element-plus --save
+
+npm install vue-axios --save
+```
+
 ```sh
 npm install
 ```

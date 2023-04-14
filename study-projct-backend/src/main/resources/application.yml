@@ -12,8 +12,39 @@ spring:
     password: wangzeyuan202
   data:
     redis:
-      host: localhost
+      #Redis服务器地址
+      host: 47.120.15.38
+      #端口
       port: 6379
+      #使用几号数据库
+      database: 0
+      # Redis服务器连接密码（默认为空）
+      password:
+#      lettuce:
+#        pool:
+#          # 连接池最大连接数（使用负值表示没有限制） 默认 8
+#          max-active: 8
+#          # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+#          max-wait: -1
+#          # 连接池中的最大空闲连接 默认 8
+#          max-idle: 8
+#          # 连接池中的最小空闲连接 默认 0
+#          min-idle: 0
+      timeout: 3000
+  mail:
+    host: smtp.qq.com
+    username: 2756949672@qq.com
+    password: xitbehltlinrdccd
+    port: 465
+    properties:
+      from: 275694962@qq.com
+      mail:
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+
+
+
 
 #MyBatis-Plus配置
 mybatis-plus:

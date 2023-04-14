@@ -1,14 +1,11 @@
 package com.wzy.studyprojectbackend.service;
 
-import org.springframework.security.core.userdetails.UserDetails;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service
-public class AuthorizeService implements UserDetailsService {
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+public interface AuthorizeService extends UserDetailsService {
+    default boolean sendValidateEmail(String email, String sessionId){
+        return false;
     }
 }
