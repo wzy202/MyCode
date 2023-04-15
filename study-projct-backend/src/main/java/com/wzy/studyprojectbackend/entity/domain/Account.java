@@ -3,6 +3,7 @@ package com.wzy.studyprojectbackend.entity.domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,10 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @TableName("db_account")
-public class Account implements Serializable {
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = -40356785423868312L;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Account {
 
     @TableId
     private Integer id;

@@ -73,7 +73,7 @@ public class AuthorizeServiceImpl implements AuthorizeService {
      */
     @Override
     public boolean sendValidateEmail(String email, String sessionId) {
-        String key = "email:"  + ":" + email;
+        String key = "email:"  + sessionId +":" + email;
         if (Boolean.TRUE.equals(stringRedisTemplate.hasKey(key))){
             Long expire = Optional.ofNullable(stringRedisTemplate.getExpire(key, TimeUnit.SECONDS)).orElse(0L);
             if (expire > 120)   return false;

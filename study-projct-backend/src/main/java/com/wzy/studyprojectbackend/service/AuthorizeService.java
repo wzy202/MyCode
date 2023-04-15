@@ -8,4 +8,8 @@ public interface AuthorizeService extends UserDetailsService {
     default boolean sendValidateEmail(String email, String sessionId){
         return false;
     }
+
+    default boolean validateRegister(){
+        return false;
+    }
 }
